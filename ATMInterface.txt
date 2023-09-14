@@ -1,0 +1,50 @@
+package Shreya;
+import java.util.Scanner;
+public class ATMinterface {
+public static void main(String[]args)
+{
+int withdraw,deposit,ch,balance=0;
+Scanner sc=new Scanner(System.in);
+System.out.println("balance:0");
+do
+{
+System.out.println("ATM Machine");
+System.out.println("choose 1 for Withdraw");
+System.out.println("choose 2 for Deposit");
+System.out.println("choose 3 for Check balance");
+System.out.println("choose 4 for exit");
+System.out.println("Enter the operation");
+ch=sc.nextInt();
+switch(ch)
+{
+case 1:
+	System.out.println("Enter money to be withdraw");
+	withdraw=sc.nextInt();
+    if(balance>=withdraw)
+	{
+	balance=balance-withdraw;
+	}
+	else
+	{
+		System.out.println("Not available balance");
+	}
+     break;
+case 2:
+	System.out.println("Enter money to be deposited");
+	deposit=sc.nextInt();
+	balance=deposit+balance;
+	System.out.println("Your balance successfully deposited..");
+	break;
+case 3:
+	System.out.println(" balance ="+balance);
+	break;
+case 4:
+	System.exit(0);
+}
+}
+while(4!=0);
+}
+}
+
+
+
